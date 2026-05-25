@@ -1,0 +1,209 @@
+.sidebar {
+    width: 260px;
+    height: 100vh;
+
+    background: #202123;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid #444654;
+}
+
+/* TOP */
+
+.topSection {
+    padding: 15px;
+}
+
+/* BUTTON */
+
+.newChatBtn {
+
+    width: 100%;
+
+    background: #343541;
+
+    border: 1px solid #565869;
+
+    color: white;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: 0.2s;
+}
+
+.newChatBtn:hover {
+    background: #40414f;
+}
+
+/* LOGO SECTION */
+
+.logoSection {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* LOGO IMAGE */
+
+.logoImage {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    background: white;
+
+    padding: 4px;
+
+    box-shadow: 0 0 12px rgba(255,255,255,0.15);
+
+    transition: 0.3s;
+}
+
+.logoImage:hover {
+    transform: scale(1.05);
+}
+
+/* BRAND */
+
+.brandName {
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+/* HISTORY */
+
+.historyContainer {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 10px;
+}
+
+.historyTitle {
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+
+    padding-left: 8px;
+}
+
+.history {
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+/* THREAD */
+
+.history li {
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.history li:hover {
+    background: #343541;
+}
+
+.highlighted {
+    background: #40414f !important;
+}
+
+.threadText {
+
+    flex: 1;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+}
+
+/* DELETE */
+
+.deleteBtn {
+
+    opacity: 0;
+
+    transition: 0.2s;
+
+    color: #aaa;
+}
+
+.history li:hover .deleteBtn {
+    opacity: 1;
+}
+
+.deleteBtn:hover {
+    color: #ff6b6b;
+}
+
+/* EMPTY */
+
+.emptyHistory {
+
+    color: #888;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+.sign {
+
+    padding: 16px;
+
+    border-top: 1px solid #444654;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 13px;
+}

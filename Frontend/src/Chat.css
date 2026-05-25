@@ -1,0 +1,55 @@
+.chats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* EMPTY */
+
+.emptyChat {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444654;
+}
+
+/* USER */
+
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.userMessage {
+    background: #10a37f;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 18px;
+    max-width: 70%;
+    line-height: 1.6;
+}
+
+/* GPT */
+
+.gptDiv {
+    background: #444654;
+    padding: 15px;
+    border-radius: 12px;
+    line-height: 1.8;
+    overflow-x: auto;
+}
+
+/* CODE */
+
+pre {
+    background: #1e1e1e !important;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: monospace;
+}
