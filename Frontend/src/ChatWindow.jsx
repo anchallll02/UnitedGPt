@@ -17,6 +17,10 @@ function ChatWindow() {
     const [loading, setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
+    const API = window.location.hostname === "localhost"
+        ? "http://localhost:8080"
+        : "https://unitedgpt.onrender.com";
+
     const getReply = async () => {
 
         if (!prompt.trim() || loading) return;
@@ -26,7 +30,6 @@ function ChatWindow() {
 
         const userMessage = prompt;
 
-        // USER MESSAGE ADD
         setPrevChats(prev => [
             ...prev,
             {
@@ -35,13 +38,12 @@ function ChatWindow() {
             }
         ]);
 
-        // CLEAR INPUT
         setPrompt("");
 
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/chat",
+                `${API}/api/chat`,
                 {
                     method: "POST",
                     headers: {
@@ -58,7 +60,6 @@ function ChatWindow() {
 
             console.log(res);
 
-            // GPT MESSAGE ADD
             setPrevChats(prev => [
                 ...prev,
                 {
@@ -91,8 +92,6 @@ function ChatWindow() {
 
         <div className="chatWindow">
 
-            {/* NAVBAR */}
-
             <div className="navbar">
 
                 <span className="logo">
@@ -110,8 +109,6 @@ function ChatWindow() {
                 </div>
 
             </div>
-
-            {/* DROPDOWN */}
 
             {
                 isOpen && (
@@ -137,13 +134,9 @@ function ChatWindow() {
                 )
             }
 
-            {/* CHAT */}
-
             <div className="chatBody">
                 <Chat />
             </div>
-
-            {/* LOADER */}
 
             {
                 loading && (
@@ -156,8 +149,6 @@ function ChatWindow() {
                 )
             }
 
-            {/* INPUT */}
-
             <div className="chatInput">
 
                 <div className="inputBox">
@@ -168,7 +159,6 @@ function ChatWindow() {
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
                         onKeyDown={(e) => {
-
                             if (e.key === "Enter") {
                                 e.preventDefault();
                                 getReply();
